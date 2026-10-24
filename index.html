@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7F1E3">
+<title>租房生存指南 · 94 条</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css">
+<style>
+:root{
+  --paper:#F7F1E3;
+  --sheet:#FFFCF4;
+  --card:#FFFEF9;
+  --ink:#3B352C;
+  --ink-2:#6B6355;
+  --ink-3:#9A9080;
+  --line:#E6DAC5;
+  --sage:#8FA98C;
+  --sage-dk:#5F7A63;
+  --blue:#9FB6C4;
+  --clay:#C4836B;
+  --butter:#F6E4B8;
+  --blush:#E9C6C4;
+  --tape:rgba(168,190,168,.45);
+  --hand:"LXGW WenKai","FZKai-Z03","Kaiti SC",STKaiti,KaiTi,"TW-Kai",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --shadow:0 8px 20px rgba(150,125,85,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:0 14px 70px;
+  color:var(--ink);
+  font:400 16px/1.7 var(--sans);
+  background-color:var(--paper);
+  background-image:radial-gradient(rgba(160,140,110,.15) 1px,transparent 1px);
+  background-size:16px 16px;
+}
+.wrap{max-width:720px;margin:0 auto}
+a{color:inherit}
+
+/* ---------- 封面 ---------- */
+.cover{
+  position:relative;margin-top:18px;padding:42px 22px 26px;
+  background:var(--sheet);border:1px solid var(--line);
+  border-radius:8px 22px 10px 18px;box-shadow:var(--shadow);
+}
+.tape{
+  position:absolute;width:118px;height:24px;
+  background:var(--tape);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0 4px,transparent 4px 9px);
+  border-left:1px dashed rgba(255,255,255,.7);
+  border-right:1px dashed rgba(255,255,255,.7);
+}
+.cover .tape{top:-11px;left:34px;transform:rotate(-3deg)}
+.cover-kicker{
+  margin:0;font:600 12px/1.4 var(--sans);letter-spacing:2px;color:var(--ink-3);
+}
+.cover h1{
+  margin:8px 0 6px;font:700 clamp(36px,11vw,54px)/1.18 var(--hand);
+  letter-spacing:1px;
+}
+.cover h1 em{font-style:normal;color:var(--sage-dk)}
+.cover-sub{margin:0;font-size:15px;color:var(--ink-2);max-width:19em}
+.cover-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{
+  display:inline-block;padding:6px 12px;font:600 12px/1.2 var(--sans);
+  color:var(--ink-2);background:#FFF8E8;border:1px solid var(--line);border-radius:999px;
+}
+.pill.hot{background:var(--butter);border-color:#E5CE95;color:#6B5222}
+.cover-note{
+  margin:18px 0 0;padding:10px 12px;font-size:12px;color:var(--ink-2);
+  background:#FFF8E8;border:1px dashed #DFCFAF;border-radius:6px;
+}
+.doodle{
+  position:absolute;right:16px;top:20px;width:82px;height:82px;
+  transform:rotate(5deg);opacity:.95;pointer-events:none;
+}
+@media (max-width:380px){.doodle{width:64px;height:64px;right:10px;top:14px}}
+
+/* ---------- 吸顶目录 ---------- */
+.toc{
+  position:sticky;top:0;z-index:30;
+  margin:14px -14px 0;padding:10px 14px 9px;
+  background:rgba(247,241,227,.95);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.toc-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:1px 0 3px}
+.toc-row::-webkit-scrollbar{display:none}
+.toc a{
+  flex:0 0 auto;padding:7px 12px;text-decoration:none;
+  font:600 13px/1 var(--sans);color:var(--ink-2);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;
+  transition:background .15s ease,border-color .15s ease;
+}
+.toc a.on{background:var(--butter);border-color:#E3CE97;color:#5F4A1E}
+.toc-bar{
+  display:flex;align-items:center;gap:10px;margin-top:7px;
+  font:600 12px/1 var(--sans);color:var(--ink-3);
+}
+.track{flex:1;height:6px;background:#EDE3D1;border-radius:99px;overflow:hidden}
+.track i{display:block;height:100%;width:0;border-radius:99px;background:var(--sage);transition:width .25s ease}
+.reset{
+  padding:4px 10px;font:600 11px/1.3 var(--sans);color:var(--ink-2);
+  background:transparent;border:1px dashed #CBB99A;border-radius:999px;cursor:pointer;
+}
+.reset:hover{background:#FFF8E8;color:var(--ink)}
+
+/* ---------- 紧急速查 ---------- */
+.emergency{
+  position:relative;margin:22px 0 0;padding:20px 18px 18px;
+  background:var(--butter);border:1px solid #E5CE95;
+  border-radius:4px 16px 6px 14px;box-shadow:var(--shadow);
+  transform:rotate(-.4deg);
+}
+.emergency .tape{top:-10px;right:22px;width:92px;transform:rotate(4deg)}
+.emergency h2{margin:0;font:700 20px/1.35 var(--hand);color:#5B4720}
+.emergency p{margin:4px 0 14px;font-size:12.5px;color:#7A6234}
+.em-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+.em-item{padding:8px 0;border-bottom:1px dashed rgba(140,105,45,.28)}
+.em-item b{display:block;font:700 21px/1.2 var(--hand);color:#4A3818;letter-spacing:.5px}
+.em-item span{display:block;font-size:11.5px;color:#7A6234;line-height:1.5}
+@media (min-width:680px){.em-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- 章节 ---------- */
+.chapter{
+  position:relative;margin:26px 0 0;padding:24px 18px 20px;
+  background:var(--sheet);border:1px solid var(--line);
+  border-radius:6px 20px 8px 16px;box-shadow:var(--shadow);
+  scroll-margin-top:96px;
+}
+.chapter::before{
+  content:"";position:absolute;top:-9px;right:26px;width:70px;height:18px;
+  background:var(--tape);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.38) 0 4px,transparent 4px 9px);
+  transform:rotate(3deg);
+}
+.chapter:nth-of-type(even)::before{left:26px;right:auto;transform:rotate(-3deg)}
+.ch-head{display:flex;align-items:flex-start;gap:12px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.ch-num{flex:0 0 auto;font:700 34px/1 var(--hand);color:var(--sage-dk);opacity:.82}
+.ch-head h2{margin:0;font:700 21px/1.4 var(--hand)}
+.ch-sub{margin:2px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.55}
+
+.ch-progress{display:flex;align-items:center;gap:10px;margin-top:12px;font:600 11.5px/1 var(--sans);color:var(--ink-3)}
+.ch-progress .mini{flex:1;height:5px;background:#EEE4D3;border-radius:99px;overflow:hidden}
+.ch-progress .mini i{display:block;height:100%;width:0;background:var(--blue);transition:width .25s ease}
+.ch-progress .num{min-width:42px;text-align:right}
+
+/* ---------- 清单 ---------- */
+.list-card{
+  margin-top:14px;padding:4px 14px;background:var(--card);
+  border:1px solid var(--line);border-radius:4px 14px 6px 12px;
+}
+.chk{
+  display:flex;align-items:flex-start;gap:12px;padding:12px 0;
+  border-bottom:1px dashed var(--line);cursor:pointer;
+}
+.chk:last-child{border-bottom:0}
+.chk input{position:absolute;opacity:0;width:1px;height:1px}
+.box{
+  position:relative;flex:0 0 auto;width:22px;height:22px;margin-top:2px;
+  background:#fff;border:1.5px solid #CBB99A;border-radius:6px;
+  transition:background .12s ease,border-color .12s ease;
+}
+.box::after{
+  content:"";position:absolute;left:7px;top:3px;width:7px;height:12px;
+  border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;
+  transform:rotate(40deg) scale(0);transform-origin:center;
+  transition:transform .15s ease;
+}
+.chk input:checked + .box{background:var(--sage);border-color:var(--sage-dk)}
+.chk input:checked + .box::after{transform:rotate(40deg) scale(1)}
+.chk input:focus-visible + .box{outline:2px solid var(--blue);outline-offset:2px}
+.chk-txt{font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.chk-txt b{font:700 16px/1.5 var(--hand);color:var(--ink);margin-right:2px}
+.chk input:checked ~ .chk-txt{color:#A79C8B}
+.chk input:checked ~ .chk-txt b{color:#A79C8B}
+.chk input:checked ~ .chk-txt{text-decoration:line-through;text-decoration-color:rgba(150,140,120,.45)}
+
+/* ---------- 条目卡片 ---------- */
+.cards{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+@media (min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+.item{
+  position:relative;padding:14px 15px;background:var(--card);
+  border:1px solid var(--line);border-radius:3px 12px 4px 10px;
+  box-shadow:0 3px 10px rgba(150,125,85,.05);
+}
+.item:nth-child(3n+2){transform:rotate(-.4deg)}
+.item:nth-child(3n){transform:rotate(.35deg)}
+.item p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+.item b{font:700 16px/1.5 var(--hand);color:var(--ink)}
+.item.warn{padding-right:42px;background:#FFFAF2;border-left:3px solid var(--clay)}
+.item.warn::after{
+  content:"坑";position:absolute;top:9px;right:10px;
+  padding:2px 4px;font:700 11px/1 var(--hand);color:var(--clay);
+  border:1px solid currentColor;border-radius:3px;
+  opacity:.8;transform:rotate(6deg);
+}
+.item.money{background:#FCFAF0}
+.item.money b{color:#5F7A63}
+
+.back{
+  display:inline-block;margin-top:16px;padding-bottom:2px;
+  font:600 12px/1 var(--sans);color:var(--sage-dk);
+  text-decoration:none;border-bottom:1px dashed currentColor;
+}
+
+/* ---------- 资源 ---------- */
+.links{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}
+@media (min-width:560px){.links{grid-template-columns:1fr 1fr}}
+.link-card{
+  display:block;padding:12px 14px;text-decoration:none;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:10px 4px 12px 4px;
+  transition:border-color .15s ease,transform .15s ease;
+}
+.link-card:hover{border-color:var(--sage);transform:translateY(-1px)}
+.lk-name{display:block;font:700 15px/1.4 var(--hand);color:var(--ink)}
+.lk-desc{display:block;margin-top:2px;font-size:12px;color:var(--ink-2);line-height:1.5}
+.lk-url{display:block;margin-top:6px;font:500 11px/1.4 ui-monospace,Consolas,monospace;color:var(--ink-3);word-break:break-all}
+.keywords{margin-top:15px;padding:14px;background:#FFF8E8;border:1px dashed #DFCFAF;border-radius:6px}
+.keywords p{margin:0;font-size:13px;line-height:1.75;color:var(--ink-2)}
+.keywords b{font-family:var(--hand);color:var(--ink)}
+
+footer{
+  margin:26px 0 0;padding:18px 4px 0;border-top:1px dashed #DCCCB2;
+  font-size:12px;line-height:1.7;color:var(--ink-3);text-align:center;
+}
+footer b{font-family:var(--hand);color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="cover">
+    <span class="tape"></span>
+    <svg class="doodle" viewBox="0 0 120 120" aria-hidden="true">
+      <rect x="22" y="52" width="76" height="52" rx="5" fill="#FFF9EC" stroke="#CBB99A" stroke-width="2.5"/>
+      <path d="M14 55 L60 18 L106 55" fill="none" stroke="#8FA98C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="50" y="74" width="20" height="30" rx="2" fill="#E9C6C4"/>
+      <rect x="30" y="64" width="14" height="13" rx="1.5" fill="#9FB6C4"/>
+      <rect x="76" y="64" width="14" height="13" rx="1.5" fill="#9FB6C4"/>
+      <circle cx="60" cy="43" r="5.5" fill="#F6E4B8"/>
+    </svg>
+    <p class="cover-kicker">2026 · 打工人自救手册</p>
+    <h1>租房<em>生存</em><br>指南</h1>
+    <p class="cover-sub">从看房到退租，94 条，一条都不少。</p>
+    <div class="cover-tags">
+      <span class="pill hot">首次租房</span>
+      <span class="pill">手机版</span>
+      <span class="pill">可勾选</span>
+      <span class="pill">附官方入口</span>
+    </div>
+    <p class="cover-note">勾选记录只存在你这台设备上，不上传、不联网。</p>
+  </header>
+
+  <nav class="toc" id="toc" aria-label="章节目录">
+    <div class="toc-row">
+      <a href="#emergency">紧急</a>
+      <a href="#ch01">01 预算</a>
+      <a href="#ch02">02 找房</a>
+      <a href="#ch03">03 看房</a>
+      <a href="#ch04">04 签约</a>
+      <a href="#ch05">05 钱</a>
+      <a href="#ch06">06 入住</a>
+      <a href="#ch07">07 住着</a>
+      <a href="#ch08">08 退租</a>
+      <a href="#ch09">09 政策</a>
+      <a href="#ch10">10 特殊</a>
+      <a href="#links">资源</a>
+    </div>
+    <div class="toc-bar">
+      <span>清单进度</span>
+      <span class="track"><i id="totalFill"></i></span>
+      <span id="totalTxt">0/33</span>
+      <button class="reset" id="resetBtn" type="button">重置</button>
+    </div>
+  </nav>
+
+  <section class="emergency" id="emergency">
+    <span class="tape"></span>
+    <h2>出事那一刻，先打这几个电话</h2>
+    <p>存进手机常用联系人，比收藏一百篇攻略有用。</p>
+    <div class="em-grid">
+      <div class="em-item"><b>110</b><span>报警 · 人身安全受威胁</span></div>
+      <div class="em-item"><b>119</b><span>火警 · 燃气泄漏也先打</span></div>
+      <div class="em-item"><b>120</b><span>急救</span></div>
+      <div class="em-item"><b>12345</b><span>政务热线 · 租房纠纷投诉</span></div>
+      <div class="em-item"><b>12348</b><span>法律援助 · 免费咨询</span></div>
+      <div class="em-item"><b>12315</b><span>消费投诉 · 中介/公寓</span></div>
+      <div class="em-item"><b>95598</b><span>国家电网 · 停电报修</span></div>
+      <div class="em-item"><b>本地燃气</b><span>燃气抢修，号码在账单上</span></div>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="chapter" id="ch01">
+    <div class="ch-head">
+      <span class="ch-num">01</span>
+      <div>
+        <h2>预算与选址</h2>
+        <p class="ch-sub">先算清账，再看房。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item money"><p><b>房租不超过到手收入 30%。</b>超过这条线，第三个月你就要靠泡面续命。</p></article>
+      <article class="item"><p><b>算“真实月成本”。</b>房租、物业、取暖、宽带、通勤加起来，别只看挂牌价。</p></article>
+      <article class="item"><p><b>通勤按门到门算。</b>地图上 40 分钟，出门常常是一个半小时。</p></article>
+      <article class="item"><p><b>先定三条硬线。</b>预算、通勤上限、要不要独卫，其余都能谈。</p></article>
+      <article class="item"><p><b>楼层别硬扛。</b>一楼潮、顶楼晒且容易漏，老小区尤其明显。</p></article>
+      <article class="item"><p><b>朝向看气候。</b>朝北冬天阴冷，南方优先选南或东南。</p></article>
+      <article class="item"><p><b>别为“精装修”多掏 500。</b>你每天真正用的是热水、水压和床垫。</p></article>
+      <article class="item"><p><b>早上实地走一次通勤。</b>比看一百张房源图都准。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 02 -->
+  <section class="chapter" id="ch02">
+    <div class="ch-head">
+      <span class="ch-num">02</span>
+      <div>
+        <h2>找房渠道</h2>
+        <p class="ch-sub">渠道选对，少踩一半坑。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item"><p><b>渠道优先级。</b>熟人直租、业主直租 &gt; 品牌公寓 &gt; 正规中介 &gt; 社交平台。</p></article>
+      <article class="item"><p><b>平台只用来筛。</b>别在平台页面上直接付任何定金。</p></article>
+      <article class="item warn"><p><b>图片太完美，大概率是网图。</b>要求实时视频走一圈，别只看九宫格。</p></article>
+      <article class="item warn"><p><b>低于市场价 20% 是诱饵。</b>到现场必说“刚租出去，还有一套”，然后带你看更差的。</p></article>
+      <article class="item"><p><b>“零中介费”最贵。</b>费用会藏进房租或每月服务费里。</p></article>
+      <article class="item"><p><b>进店先看两样。</b>营业执照，加上经纪人的实名从业卡。</p></article>
+      <article class="item"><p><b>查公司底细。</b>国家企业信用信息公示系统搜名字，看经营异常和处罚。</p></article>
+      <article class="item"><p><b>第一次看房别一个人。</b>尤其晚上，叫上朋友。</p></article>
+      <article class="item warn"><p><b>没签合同，一分钱都别付。</b>意向金、定金都可能是沉没成本。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 03 -->
+  <section class="chapter" id="ch03">
+    <div class="ch-head">
+      <span class="ch-num">03</span>
+      <div>
+        <h2>看房体检</h2>
+        <p class="ch-sub">进门先当一次验房师，把这 11 项逐个过。</p>
+      </div>
+    </div>
+    <div class="ch-progress"><span>完成</span><span class="mini"><i></i></span><span class="num">0/11</span></div>
+    <div class="list-card">
+      <label class="chk"><input type="checkbox" data-id="c03-01"><span class="box"></span><span class="chk-txt"><b>水压</b> 同时开厨房和淋浴，水流明显变细就是管子有问题。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-02"><span class="box"></span><span class="chk-txt"><b>热水器</b> 点火、加热是否正常，出热水要等几分钟。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-03"><span class="box"></span><span class="chk-txt"><b>马桶与地漏</b> 冲水顺不顺，卫生间有没有返味。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-04"><span class="box"></span><span class="chk-txt"><b>墙面天花板</b> 黄渍、水痕、发霉，都是漏水前科。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-05"><span class="box"></span><span class="chk-txt"><b>电路</b> 每个插座通电试，问总闸位置，老房注意线路老化。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-06"><span class="box"></span><span class="chk-txt"><b>三表</b> 水、电、燃气表当场拍照记读数。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-07"><span class="box"></span><span class="chk-txt"><b>隔音</b> 敲墙听空响是隔断墙；留意临街、临电梯、临地铁。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-08"><span class="box"></span><span class="chk-txt"><b>信号与宽带</b> 每个房间看手机信号，问清能不能装宽带。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-09"><span class="box"></span><span class="chk-txt"><b>甲醛与异味</b> 新装修的刺鼻味，打开柜门闻一闻。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-10"><span class="box"></span><span class="chk-txt"><b>安全</b> 门锁等级、猫眼、楼道灯、消防通道有没有被堵。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c03-11"><span class="box"></span><span class="chk-txt"><b>家电逐台开机</b> 空调制冷、洗衣机排水、冰箱制冷，全都试一遍。</span></label>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 04 -->
+  <section class="chapter" id="ch04">
+    <div class="ch-head">
+      <span class="ch-num">04</span>
+      <div>
+        <h2>签约与条款</h2>
+        <p class="ch-sub">合同上没写的，等于没有。</p>
+      </div>
+    </div>
+    <div class="ch-progress"><span>完成</span><span class="mini"><i></i></span><span class="num">0/11</span></div>
+    <div class="list-card">
+      <label class="chk"><input type="checkbox" data-id="c04-01"><span class="box"></span><span class="chk-txt"><b>核身份</b> 身份证与房产证（或不动产登记）姓名必须一致。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-02"><span class="box"></span><span class="chk-txt"><b>不是本人签约</b> 要授权委托书，加双方身份证复印件。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-03"><span class="box"></span><span class="chk-txt"><b>二房东</b> 必须有原房东同意转租的书面文件。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-04"><span class="box"></span><span class="chk-txt"><b>写清四件事</b> 租期、租金、押金、付款方式与涨租规则。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-05"><span class="box"></span><span class="chk-txt"><b>押金退还</b> 写清条件和时限，建议约定 7 日内。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-06"><span class="box"></span><span class="chk-txt"><b>维修责任</b> 自然损耗归房东，人为损坏归租客，白纸黑字。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-07"><span class="box"></span><span class="chk-txt"><b>家电家具清单</b> 逐件写品牌、数量、损坏状况，拍照附后。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-08"><span class="box"></span><span class="chk-txt"><b>费用归属</b> 水电气、物业、取暖、宽带谁付，按表还是均摊。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-09"><span class="box"></span><span class="chk-txt"><b>违约金对等</b> 你提前退租和房东提前收房，都要写。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-10"><span class="box"></span><span class="chk-txt"><b>口头承诺</b> 全部落进补充条款，聊天记录也留好。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c04-11"><span class="box"></span><span class="chk-txt"><b>卖房与续租</b> 买卖不破租赁；确认提前通知期和优先续租权。</span></label>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 05 -->
+  <section class="chapter" id="ch05">
+    <div class="ch-head">
+      <span class="ch-num">05</span>
+      <div>
+        <h2>钱的事</h2>
+        <p class="ch-sub">每一笔都要留痕，别用现金。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item"><p><b>押一付三不是行规。</b>那只是房东的愿望，可以谈。</p></article>
+      <article class="item money"><p><b>押金别超过两个月租金。</b>超出的部分，基本等于无息贷款给房东。</p></article>
+      <article class="item"><p><b>中介费一般一个月租金。</b>双方各付一半，是可以谈的。</p></article>
+      <article class="item warn"><p><b>拒绝“租金贷”。</b>让你用 App 分期付租，等于你背了一笔贷款。</p></article>
+      <article class="item"><p><b>只走银行转账。</b>备注“X 月房租”，别给现金。</p></article>
+      <article class="item warn"><p><b>收款人必须是合同上的房东。</b>不是“房东表弟”，也不是“他朋友”。</p></article>
+      <article class="item"><p><b>每笔都要凭证。</b>收据或转账记录，退租时就是证据。</p></article>
+      <article class="item"><p><b>问清额外费用。</b>服务费、管理费、保洁费，到底包含什么。</p></article>
+      <article class="item money"><p><b>留一笔周转金。</b>至少一个月租金，应对押金和搬家。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 06 -->
+  <section class="chapter" id="ch06">
+    <div class="ch-head">
+      <span class="ch-num">06</span>
+      <div>
+        <h2>入住交接</h2>
+        <p class="ch-sub">当天做完，后面省心。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item"><p><b>入住当天拍全屋视频。</b>从门锁开始，每个房间转一圈。</p></article>
+      <article class="item"><p><b>抄三表并拍照。</b>当天发给房东确认，留下对话记录。</p></article>
+      <article class="item"><p><b>办理账户过户。</b>水电气更名，别替上任租客还欠费。</p></article>
+      <article class="item"><p><b>去物业查欠费。</b>物业费、取暖费有没有历史欠账。</p></article>
+      <article class="item"><p><b>取暖费写清楚。</b>北方集中供暖，谁承担、怎么算。</p></article>
+      <article class="item"><p><b>宽带问三句。</b>能不能装、谁出钱、到期怎么处理。</p></article>
+      <article class="item"><p><b>换锁芯。</b>几十块钱，换掉的是安全感。</p></article>
+      <article class="item"><p><b>把电话贴在门后。</b>物业、维修、燃气抢修、开锁。</p></article>
+      <article class="item"><p><b>建一个“房子”相册。</b>合同、票据、读数、视频放一起。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 07 -->
+  <section class="chapter" id="ch07">
+    <div class="ch-head">
+      <span class="ch-num">07</span>
+      <div>
+        <h2>居住期</h2>
+        <p class="ch-sub">住进去才是长跑，这 11 条建议提前看。</p>
+      </div>
+    </div>
+    <div class="ch-progress"><span>完成</span><span class="mini"><i></i></span><span class="num">0/11</span></div>
+    <div class="list-card">
+      <label class="chk"><input type="checkbox" data-id="c07-01"><span class="box"></span><span class="chk-txt"><b>报修走文字</b> 微信、短信留痕，别只打电话。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-02"><span class="box"></span><span class="chk-txt"><b>漏水先关阀再拍照</b> 同时通知房东和楼下。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-03"><span class="box"></span><span class="chk-txt"><b>合同期内不涨租</b> 房东单方面涨租没有依据。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-04"><span class="box"></span><span class="chk-txt"><b>房东卖房不用搬</b> 买卖不破租赁，你有权住到期满。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-05"><span class="box"></span><span class="chk-txt"><b>带看要预约</b> 提前约定时间，你有权拒绝天天上门。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-06"><span class="box"></span><span class="chk-txt"><b>室友先谈钱</b> 水电怎么分、公共用品谁买，先说断。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-07"><span class="box"></span><span class="chk-txt"><b>卫生排班写下来</b> 比讲道理有用一百倍。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-08"><span class="box"></span><span class="chk-txt"><b>安全习惯</b> 出门反锁、快递不写全门牌、不给陌生人开门。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-09"><span class="box"></span><span class="chk-txt"><b>火灾</b> 先断电，湿毛巾捂口鼻，走楼梯不坐电梯。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-10"><span class="box"></span><span class="chk-txt"><b>噪音三步走</b> 沟通、找物业，再打 12345。</span></label>
+      <label class="chk"><input type="checkbox" data-id="c07-11"><span class="box"></span><span class="chk-txt"><b>缴费凭证留到退租后三个月</b> 别问为什么，问就是吃过亏。</span></label>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 08 -->
+  <section class="chapter" id="ch08">
+    <div class="ch-head">
+      <span class="ch-num">08</span>
+      <div>
+        <h2>退租与维权</h2>
+        <p class="ch-sub">押金是谈出来的，也是证据撑起来的。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item"><p><b>提前 30 天通知。</b>按合同来，微信文字也算书面。</p></article>
+      <article class="item"><p><b>退租前再拍一次视频。</b>和入住视频对照着看。</p></article>
+      <article class="item"><p><b>打扫到“能住人”。</b>别给扣押金留话柄。</p></article>
+      <article class="item"><p><b>当面验房、当场结算。</b>退还时间写进交接单。</p></article>
+      <article class="item warn"><p><b>扣押金要列明细。</b>项目、金额、票据，缺一不可。</p></article>
+      <article class="item"><p><b>协商不成有三级。</b>12345 投诉、街道调解、12348 法律咨询。</p></article>
+      <article class="item"><p><b>证据五件套。</b>合同、转账、聊天、照片视频、交接单。</p></article>
+      <article class="item"><p><b>金额不大也能起诉。</b>小额诉讼程序，成本比你想的低。</p></article>
+      <article class="item warn"><p><b>别用断水断电对抗。</b>你可能从有理变成被索赔。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 09 -->
+  <section class="chapter" id="ch09">
+    <div class="ch-head">
+      <span class="ch-num">09</span>
+      <div>
+        <h2>政策福利</h2>
+        <p class="ch-sub">能领的钱别客气。以下均以当地最新规定为准。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item money"><p><b>租房补贴。</b>多数城市对新就业大学生开放，去当地人社局官网查。</p></article>
+      <article class="item money"><p><b>公积金提取。</b>凭合同或备案证明提取，走“全国住房公积金”小程序。</p></article>
+      <article class="item money"><p><b>个税专项扣除。</b>住房租金每月可扣，用个人所得税 App 填报。</p></article>
+      <article class="item"><p><b>租赁备案。</b>办居住证、子女入学常用，需要房东配合。</p></article>
+      <article class="item"><p><b>居住证。</b>连续居住加社保，年限看城市。</p></article>
+      <article class="item"><p><b>租赁发票。</b>可以要求房东开，部分城市支持代开。</p></article>
+      <article class="item money"><p><b>应届生专属。</b>人才公寓、毕业生补贴，问 HR 和当地人才办。</p></article>
+      <article class="item"><p><b>不确定就打 12345。</b>比刷十篇攻略准，而且是官方口径。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 10 -->
+  <section class="chapter" id="ch10">
+    <div class="ch-head">
+      <span class="ch-num">10</span>
+      <div>
+        <h2>特殊场景</h2>
+        <p class="ch-sub">合租、转租、公寓、宠物，总有一款适合你。</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article class="item"><p><b>合租。</b>先见室友再签约，问清作息和访客规则。</p></article>
+      <article class="item"><p><b>转租。</b>必须原房东书面同意，否则可能被清退。</p></article>
+      <article class="item warn"><p><b>二房东。</b>先看他和原房东的合同还剩多久，别接到一个快过期的转租。</p></article>
+      <article class="item warn"><p><b>集中式公寓。</b>重点看租金贷、退租条款、服务费。</p></article>
+      <article class="item warn"><p><b>隔断房与群租。</b>违法且消防风险高，可以举报。</p></article>
+      <article class="item"><p><b>养宠。</b>合同写明能不能养、押金是否加收。</p></article>
+      <article class="item"><p><b>短租过渡。</b>贵但灵活，异地落地先住一个月。</p></article>
+      <article class="item"><p><b>情侣或朋友合租。</b>先约定散伙怎么分，别拿感情考验账单。</p></article>
+      <article class="item"><p><b>异地租房。</b>先短租，实地看完再签长租。</p></article>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <!-- 资源 -->
+  <section class="chapter" id="links">
+    <div class="ch-head">
+      <span class="ch-num">+</span>
+      <div>
+        <h2>官方入口与常用平台</h2>
+        <p class="ch-sub">只放首页级地址，失效概率低；找不到就站内搜。</p>
+      </div>
+    </div>
+    <div class="links">
+      <a class="link-card" href="https://www.12348.gov.cn" target="_blank" rel="noopener">
+        <span class="lk-name">中国法律服务网</span>
+        <span class="lk-desc">12348 · 免费法律咨询、法援申请</span>
+        <span class="lk-url">www.12348.gov.cn</span>
+      </a>
+      <a class="link-card" href="https://www.12315.cn" target="_blank" rel="noopener">
+        <span class="lk-name">全国 12315 平台</span>
+        <span class="lk-desc">中介、公寓、押金纠纷的消费投诉入口</span>
+        <span class="lk-url">www.12315.cn</span>
+      </a>
+      <a class="link-card" href="https://www.mohurd.gov.cn" target="_blank" rel="noopener">
+        <span class="lk-name">住房和城乡建设部</span>
+        <span class="lk-desc">租赁政策原文、行业规范</span>
+        <span class="lk-url">www.mohurd.gov.cn</span>
+      </a>
+      <a class="link-card" href="https://www.gsxt.gov.cn" target="_blank" rel="noopener">
+        <span class="lk-name">国家企业信用信息公示系统</span>
+        <span class="lk-desc">查中介、二房东公司底细</span>
+        <span class="lk-url">www.gsxt.gov.cn</span>
+      </a>
+      <a class="link-card" href="https://zxgk.court.gov.cn" target="_blank" rel="noopener">
+        <span class="lk-name">中国执行信息公开网</span>
+        <span class="lk-desc">查对方是否为失信被执行人</span>
+        <span class="lk-url">zxgk.court.gov.cn</span>
+      </a>
+      <a class="link-card" href="https://www.ke.com" target="_blank" rel="noopener">
+        <span class="lk-name">贝壳租房</span>
+        <span class="lk-desc">房源、小区与成交价参考</span>
+        <span class="lk-url">www.ke.com</span>
+      </a>
+      <a class="link-card" href="https://www.lianjia.com" target="_blank" rel="noopener">
+        <span class="lk-name">链家</span>
+        <span class="lk-desc">小区挂牌价，用来判断报价是否离谱</span>
+        <span class="lk-url">www.lianjia.com</span>
+      </a>
+      <a class="link-card" href="https://www.ziroom.com" target="_blank" rel="noopener">
+        <span class="lk-name">自如</span>
+        <span class="lk-desc">集中式与分散式公寓，看清服务费</span>
+        <span class="lk-url">www.ziroom.com</span>
+      </a>
+      <a class="link-card" href="https://www.goofish.com" target="_blank" rel="noopener">
+        <span class="lk-name">闲鱼</span>
+        <span class="lk-desc">个人转租、搬家出闲置</span>
+        <span class="lk-url">www.goofish.com</span>
+      </a>
+      <a class="link-card" href="https://www.douban.com/group/" target="_blank" rel="noopener">
+        <span class="lk-name">豆瓣小组</span>
+        <span class="lk-desc">搜“城市名 + 租房”，找室友和转租</span>
+        <span class="lk-url">www.douban.com/group</span>
+      </a>
+    </div>
+    <div class="keywords">
+      <p><b>App 直达：</b>个人所得税（住房租金扣除）、全国住房公积金（微信/支付宝小程序）、12345（各地政务小程序）。</p>
+      <p><b>搜索词：</b>城市名 + 租房补贴 / 租赁备案 / 公积金提取 / 人才公寓，加“官网”两个字，能过滤掉九成中介软文。</p>
+    </div>
+    <a class="back" href="#toc">回目录</a>
+  </section>
+
+  <footer>
+    <b>租房生存指南 · 2026</b><br>
+    本文为经验整理，不构成法律意见；费率、补贴与政策请以当地最新规定为准。<br>
+    遇到具体纠纷，优先拨打 12348 获取免费法律咨询。
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var KEY = 'rent-guide-checks-v1';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type="checkbox"][data-id]'));
+  var state = {};
+
+  try {
+    state = JSON.parse(localStorage.getItem(KEY) || '{}') || {};
+  } catch (e) {
+    state = {};
+  }
+
+  function save() {
+    var current = {};
+    boxes.forEach(function (b) {
+      if (b.checked) current[b.dataset.id] = true;
+    });
+    state = current;
+    try { localStorage.setItem(KEY, JSON.stringify(current)); } catch (e) {}
+  }
+
+  function render() {
+    var total = 0, done = 0;
+
+    Array.prototype.forEach.call(document.querySelectorAll('section.chapter'), function (ch) {
+      var items = Array.prototype.slice.call(ch.querySelectorAll('input[type="checkbox"][data-id]'));
+      if (!items.length) return;
+      var ok = items.filter(function (i) { return i.checked; }).length;
+      total += items.length;
+      done += ok;
+      var num = ch.querySelector('.ch-progress .num');
+      var fill = ch.querySelector('.ch-progress .mini i');
+      if (num) num.textContent = ok + '/' + items.length;
+      if (fill) fill.style.width = (ok / items.length * 100) + '%';
+    });
+
+    var totalTxt = document.getElementById('totalTxt');
+    var totalFill = document.getElementById('totalFill');
+    if (totalTxt) totalTxt.textContent = done + '/' + total;
+    if (totalFill) totalFill.style.width = (total ? done / total * 100 : 0) + '%';
+  }
+
+  boxes.forEach(function (box) {
+    if (state[box.dataset.id]) box.checked = true;
+    box.addEventListener('change', function () {
+      state[box.dataset.id] = box.checked;
+      save();
+      render();
+    });
+  });
+
+  var resetBtn = document.getElementById('resetBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      if (!window.confirm('清空所有勾选？')) return;
+      boxes.forEach(function (b) { b.checked = false; });
+      state = {};
+      save();
+      render();
+    });
+  }
+
+  render();
+
+  window.addEventListener('pagehide', save);
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') save();
+  });
+
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.toc-row a'));
+  var byId = {};
+  chips.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        chips.forEach(function (c) { c.classList.remove('on'); });
+        var chip = byId[en.target.id];
+        if (chip) {
+          chip.classList.add('on');
+          chip.scrollIntoView({ inline: 'center', block: 'nearest' });
+        }
+      });
+    }, { rootMargin: '-25% 0px -60% 0px' });
+    Array.prototype.forEach.call(document.querySelectorAll('section.chapter, section.emergency'), function (s) {
+      io.observe(s);
+    });
+  }
+})();
+</script>
+</body>
+</html>
